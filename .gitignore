@@ -1,3 +1,4 @@
 env/
 assets/
+!assets/snake_clip3.gif
 .DS_Store
