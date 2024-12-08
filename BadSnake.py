@@ -206,59 +206,6 @@ class Agent:
     def update_target_model(self):
         pass  # No need to update the target model if it's not being used
 
-# class Agent:
-#     def __init__(self, input_dim=11, output_dim=3, hidden_dim=32, lr=0.01, gamma=0.5, epsilon_decay=1.0):
-#         self.model = DQN(input_dim, hidden_dim, output_dim)
-#         self.target_model = None
-#         self.optimizer = optim.Adam(self.model.parameters(), lr=lr)
-#         self.memory = deque(maxlen=500)
-#         self.gamma = gamma 
-#         self.epsilon = 1.0  
-#         self.epsilon_min = 1.0 
-#         self.epsilon_decay = epsilon_decay
-
-
-#     def act(self, state):
-#         if np.random.rand() <= self.epsilon:
-#             return random.randint(0, 2) 
-#         state = torch.tensor(state, dtype=torch.float32).unsqueeze(0)
-#         with torch.no_grad():
-#             return torch.argmax(self.model(state)).item()
-
-#     def remember(self, state, action, reward, next_state, done):
-#         self.memory.append((state, action, reward, next_state, done))
-
-#     def replay(self, batch_size):
-#         if len(self.memory) < batch_size:
-#             return
-
-#         batch = random.sample(self.memory, batch_size)
-#         for state, action, reward, next_state, done in batch:
-#             state = torch.tensor(state, dtype=torch.float32).unsqueeze(0)
-#             next_state = torch.tensor(next_state, dtype=torch.float32).unsqueeze(0)
-#             target = reward
-#             if not done:
-#                 target += self.gamma * torch.max(self.model(next_state)).item()
-#             target_f = self.model(state).detach()
-
-#             if action < len(target_f[0]):
-#                 target_f[0][action] = target
-#             else:
-#                 print(f"Invalid Action: {action}, Allowed: 0-{len(target_f[0])-1}")
-
-#             self.optimizer.zero_grad()
-#             loss = nn.MSELoss()(self.model(state), target_f)
-#             loss.backward()
-#             self.optimizer.step()
-
-#         if self.epsilon > self.epsilon_min:
-#             self.epsilon *= self.epsilon_decay
-
-#     def update_target_model(self):
-#         pass  # No need to update the target model if it's not being used
-
-
-import matplotlib.pyplot as plt
 
 def train():
     env = SnakeGame()

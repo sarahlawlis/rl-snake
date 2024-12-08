@@ -21,6 +21,9 @@ BadSnake:
     - Input Layer: 11 features
     - Hidden Layer: 1 layer, 32 neurons
     - Output Layer: 3 actions
+
+<img src="./assets/BadSnakeNN.png" alt="BadSnakeNN" width="500"/>
+
 - Learning Parameters:
     - Learning Rate: 0.01
     - Discount Factor (Gamma): 0.5
@@ -34,6 +37,9 @@ GoodSnake:
     - Input Layer: 11 features
     - Hidden Layers: 2 hidden layers, 128 neurons each
     - Output Layer: 3 actions
+
+<img src="./assets/GoodSnakeNN.png" alt="GoodSnakeNN" width="500"/>
+
 - Learning Parameters:
     - Learning Rate: 0.0001
     - Discount Factor (Gamma): 0.99

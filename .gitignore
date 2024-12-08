@@ -1,4 +1,6 @@
 env/
 assets/
 !assets/snake_clip3.gif
+!assets/BadSnakeNN.png
+!assets/GoodSnakeNN.png
 .DS_Store
